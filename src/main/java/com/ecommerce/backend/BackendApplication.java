@@ -2,6 +2,7 @@ package com.ecommerce.backend;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.ecommerce.backend.model.Product;
 import com.ecommerce.backend.repository.ProductRepository;
