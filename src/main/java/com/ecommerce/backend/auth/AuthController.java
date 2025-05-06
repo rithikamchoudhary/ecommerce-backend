@@ -43,11 +43,11 @@ public class AuthController {
                 // .map(user -> jwtService.generateToken(user.getUsername()))
                 // .orElseThrow(() -> new RuntimeException("Invalid username or password"));
                 .map(user -> {
-                    System.out.println("🔍 Username found: " + user.getUsername());
-                    System.out.println("🔐 Stored hash: " + user.getPassword());
-                    System.out.println("🔐 Raw entered: " + request.getPassword());
+                    System.out.println("Username found: " + user.getUsername());
+                    System.out.println("Stored hash: " + user.getPassword());
+                    System.out.println("Raw entered: " + request.getPassword());
                     boolean matches = passwordEncoder.matches(request.getPassword(), user.getPassword());
-                    System.out.println("✅ Password match? " + matches);
+                    System.out.println("Password match? " + matches);
 
                     if (!matches)
                         throw new RuntimeException("Password mismatch");

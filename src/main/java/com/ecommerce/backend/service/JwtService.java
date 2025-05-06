@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 // import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
 
 @Service
 public class JwtService {
@@ -26,4 +27,5 @@ public class JwtService {
                 .signWith(Keys.hmacShaKeyFor(secret.getBytes()), SignatureAlgorithm.HS256)
                 .compact();
     }
+
 }

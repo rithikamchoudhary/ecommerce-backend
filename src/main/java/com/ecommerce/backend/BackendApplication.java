@@ -17,6 +17,11 @@ public class BackendApplication {
 	}
 
 	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder();
+	}
+
+	@Bean
 	CommandLineRunner init(ProductRepository repo) {
 		return args -> {
 			// if (repo.count() == 0) {
